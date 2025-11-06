@@ -1,0 +1,141 @@
+.header {
+  min-height: 110px;
+  background: var(--surface);
+  border-bottom: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 16px;
+  transition: background .3s, border .3s;
+}
+
+/* LOGO + TÍTULO */
+ .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(0 0 15px var(--text));
+}
+
+.logo p {
+  color: var(--text);
+  font-size: 12px;
+  margin-top: -20px;
+}
+.logo-headerHome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+
+}
+.logo-headerHome img {
+  width: 150px;
+  
+
+}
+/* NAV MENU */
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.menu nav ul {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu nav ul li a {
+  color: var(--text);
+  font-weight: bold;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.menu nav ul li a:hover {
+  color: var(--primary);
+  text-shadow: 0 0 6px var(--primary);
+  transform: translateY(-2px);
+}
+
+/* banner promos*/
+.menu .banner-promos {
+  border: 2px solid var(--border);
+  margin: 15px auto;
+  height: 50px;
+  width: 300px;
+  background-color: var(--text);
+}
+
+
+
+/* Botón modo 🌙 / ☀️ */
+#cambiartema {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--text);
+  color: var(--bg);
+  cursor: pointer;
+  font-size: 14px;
+  transition: .3s;
+}
+
+#cambiartema:hover {
+  opacity: .85;
+  transform: scale(1.05);
+  text-shadow: 0 0 10px var(--surface);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .menu nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+    gap: 10px;
+    font-size: smaller;
+  }
+
+  .menu .banner-promos {
+
+    
+    margin-top: -30px;
+  }
+
+  .logo img {
+
+    width: 150px;
+  }
+
+  #cambiartema {
+    position: absolute;
+    top: 2px;
+    right: px;
+    font-size: 10px;
+
+  }
+}

@@ -1,0 +1,17 @@
+@import url(./colors.css);
+@import url(./form.css);
+@import url(./header.css);
+@import url(./views/home.css);
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+
+  margin: 0;
+  padding: 0;
+}
+.danger {
+  color: var(--danger);
+}
+.success {
+  color: var(--success);
+}

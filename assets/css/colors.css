@@ -1,0 +1,101 @@
+/* 🌗 Modo Light por defecto */
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --text: #121212;
+  --primary: #ff2e2e;
+  --surface: #f5f5f5;
+  --border: #e5e5e5;
+
+  /* Botones */
+  --success: #28c76f;
+  /* Guardar */
+  --danger: #ea5455;
+  /* Cancelar / Eliminar */
+  --disabled: #bfbfbf;
+  /* Botón inactivo */
+  --disabled-text: #777;
+
+  --btn-primary-bg: var(--success);
+  --btn-primary-text: #ffffff;
+
+  --btn-danger-bg: var(--danger);
+  --btn-danger-text: #ffffff;
+
+  --btn-disabled-bg: var(--disabled);
+  --btn-disabled-text: var(--disabled-text);
+}
+
+/* 🌓 Dark automático según sistema operativo */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d0d0d;
+    --text: #f0f0f0;
+    --primary: #ff1a1a;
+    --surface: #1a1a1a;
+    --border: #333333;
+
+    --success: #32e07b;
+    --danger: #ff6b6b;
+    --disabled: #3a3a3a;
+    --disabled-text: #999;
+
+    --btn-success-bg: var(--success);
+    --btn-success-text: #ffffff;
+
+    --btn-danger-bg: var(--danger);
+    --btn-danger-text: #ffffff;
+
+    --btn-disabled-bg: var(--disabled);
+    --btn-disabled-text: var(--disabled-text);
+  }
+}
+
+/* ☀️ Modo Light forzado por toggle */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #ffffff;
+  --text: #121212;
+  --primary: #ff2e2e;
+  --surface: #f5f5f5;
+  --border: #e5e5e5;
+
+  --success: #28c76f;
+  --danger: #ea5455;
+  --disabled: #bfbfbf;
+  --disabled-text: #777;
+
+  --btn-success-bg: var(--success);
+  --btn-success-text: var(--text);
+
+  --btn-danger-bg: var(--danger);
+  --btn-danger-text: var(--text);
+
+  --btn-disabled-bg: var(--disabled);
+  --btn-disabled-text: var(--disabled-text);
+}
+
+/* 🌑 Modo Dark forzado por toggle */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0d0d0d;
+  --text: #f0f0f0;
+  --primary: #ff1a1a;
+  --surface: #1a1a1a;
+  --border: #333333;
+
+  --success: #32e07b;
+  --danger: #ff6b6b;
+  --disabled: #3a3a3a;
+  --disabled-text: #999;
+
+  --btn-primary-bg: var(--success);
+  --btn-primary-text: #ffffff;
+
+  --btn-danger-bg: var(--danger);
+  --btn-danger-text: #ffffff;
+
+  --btn-disabled-bg: var(--disabled);
+  --btn-disabled-text: var(--disabled-text);
+}

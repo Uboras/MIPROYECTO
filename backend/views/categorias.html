@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../assets/css/estilos.css">
+  <title>IronPulse Crear Categoria</title>
+</head>
+<body>
+ <header class="header"></header>
+  
+
+  <form id="form-categoria" class="formulario-categoria">
+    <h2>Alta de Categorías</h2>
+    <label for="id">ID Categoría</label>
+    <input type="number"  id="id-categoria-form" name="id">
+
+    <label for="nombre">Nombre de la Categoría</label>
+    <input type="text" id="nombre-categoria-form" name="nombre"  required>
+
+    <div class="acciones">
+      <button type="submit" class="btn guardar">Guardar</button>
+      <button type="reset" class="btn cancelar">Cancelar</button>
+    </div>
+    <p id="error-form"></p>
+  </form>
+  
+  <p class="autor">Hernán Manera</p>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="module" src="../../assets/js/main.js"></script>
+
+</html>

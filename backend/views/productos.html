@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../assets/css/estilos.css">
+  <title>IronPulse Crear Productos</title>
+</head>
+
+<body>
+  <header class="header"></header>
+  <!-- faltaria un fetch para obtener las categorias para mostrarlas para la elección.  -->
+
+  <form id="form-productos" class="formulario-productos">
+    <h2>Alta de Productos</h2>
+    <label for="id-producto">ID Producto</label>
+    <input type="number" id="id-producto" name="id" required>
+
+    <label for="nombre-producto">Nombre del Producto</label>
+    <input type="text" id="nombre-producto" name="nombre" required>
+
+    <label for="descripcion-producto">Descripción</label>
+    <textarea id="descripcion-producto" name="descripcion-producto" required ></textarea>
+
+    <label for="precio-producto">Precio</label>
+    <input type="number" min=1 id="precio-producto" name="precio" required>
+
+    <label for="categoria-producto">ID Categoría</label>
+    <input type="number" id="categoria-producto" name="categoria" required>
+
+    <div class="acciones">
+      <button type="submit" class="btn guardar">Guardar</button>
+      <button type="reset" class="btn cancelar">Cancelar</button>
+    </div>
+    <p id="error-form" class="danger"></p>
+  </form>
+
+  <p class="autor">Hernán Manera</p>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="module" src="../../assets/js/main.js"></script>
+
+</html>

@@ -1,0 +1,81 @@
+form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 10px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+}
+
+label {
+  display: block;
+  margin: 10px  10px;
+}
+
+input, textarea {
+  background-color: var(--bg);
+  width: 90%;
+  padding: 8px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+}
+
+textarea {
+  resize: vertical;
+  height: 80px;
+}
+
+.acciones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.autor {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.btn {
+  margin-right: 20px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 2px solid var(--border);
+  color: var(--bg);
+  cursor: pointer;
+  font-size: 14px;
+  transition: .3s;
+}
+.cancelar{
+    background: var(--btn-danger-bg);
+    text-shadow: 1px 1px 2px var(--surface);
+    color: var(--btn-danger-text);
+}
+.guardar{
+    background: var(--btn-success-bg);
+    text-shadow: 1px 1px 2px var(--surface);
+    color: var(--btn-success-text);
+}
+
+.btn:hover {
+  opacity: .85;
+  transform: scale(1.05);
+  text-shadow: 0 0 10px var(--surface);
+}
+
+#error-form {
+  
+  font-weight: bold;
+  
+}
+.error-text{
+  font-weight: 500;
+  font-size: 14px;
+ margin: 4px 8px;
+}
+.success-text{
+  font-weight: 800;
+  font-size: 14px;
+ margin: 4px 8px;
+}
