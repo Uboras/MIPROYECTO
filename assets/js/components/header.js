@@ -1,4 +1,5 @@
-export function Header({ logo }) {
+const logo = "../../assets/img/logonegro.png";
+export function Header() {
   const selector = ".header";
   const head = document.querySelector(selector);
   if (!head) return;
@@ -25,12 +26,13 @@ export function Header({ logo }) {
     <div class="clear"></div>
   `;
 }
-export function HeaderHome({ logo }) {
-  const selector = ".headerHome";
-  const head = document.querySelector(selector);
+export function HeaderHome() {
+  const selector1 = ".headerHome";
+  const head = document.querySelector(selector1);
   head.innerHTML = `
      <div class="logo-headerHome">
       <a href="../../../views/home.html"><img src="${logo}" alt="Logo IronPulse" /></a>
     </div>
     
-      </div>`;}
+      </div>`;
+    }
