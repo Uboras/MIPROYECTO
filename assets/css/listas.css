@@ -1,0 +1,59 @@
+
+.tabla-contenedor {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 10px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+}
+
+.tabla-titulo {
+  text-align: center;
+  margin: 10px 0 15px;
+  font-size: 1.4rem;
+}
+
+.tabla-listado {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+.tabla-listado thead th {
+  background: var(--surface);
+  border-bottom: 2px solid var(--border);
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.tabla-listado tbody td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tabla-listado tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.tabla-listado tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  transition: background-color .2s;
+}
+
+.tabla-vacia {
+  text-align: center;
+  font-style: italic;
+  padding: 10px 0;
+}
+
+.acciones-listado {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}

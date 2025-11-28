@@ -1,43 +1,44 @@
 <?php
-/*@autor Hernan Manera */ 
-class Database {
-    private $host = "localhost";
-    private $db_name = "MIPROYECTO";
-    private $username = "root";
-    private $password = "";
-    public $conn;
+/* @autor Hernán Manera */
 
-    public function connect() {
-        $this->conn = null;
-        try {
-            $this->conn = new PDO("mysql:host=".$this->host.";dbname=".$this->db_name, 
-                                  $this->username, $this->password);
-            $this->conn->exec("set names utf8");
-        } catch(PDOException $exception) {
-            echo "Error de conexión: " . $exception->getMessage();
-        }
-        return $this->conn;
+class Database
+{
+    private $host = 'localhost';
+    private $db   = 'miproyecto';
+    private $user = 'root';
+    private $pass = 'root';
+    private $pdo;
+
+    public function __construct()
+    {
+        $dsn = "mysql:host={$this->host};dbname={$this->db};charset=utf8";
+        $this->pdo = new PDO($dsn, $this->user, $this->pass);
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
-    public function insert($query, $params = []) {
-        $stmt = $this->conn->prepare($query);
+    public function insert($sql, $params = [])
+    {
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+        return $this->pdo->lastInsertId();
+    }
+
+    public function update($sql, $params = [])
+    {
+        $stmt = $this->pdo->prepare($sql);
         return $stmt->execute($params);
     }
 
-    public function select($query) {
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
+    public function delete($sql, $params = [])
+    {
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute($params);
+    }
+
+    public function select($sql, $params = [])
+    {
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    public function update($query, $params = []) {
-        $stmt = $this->conn->prepare($query);
-        return $stmt->execute($params);
-    }
-
-    public function delete($query, $params = []) {
-        $stmt = $this->conn->prepare($query);
-        return $stmt->execute($params);
-    }
 }
-?>

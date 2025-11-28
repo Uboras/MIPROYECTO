@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Listado de Categorías</title>
+  <link rel="stylesheet" href="../../assets/css/estilos.css">
+</head>
+<body>
+   <header class="header"></header>
+ <div class="tabla-contenedor">
+  <h1 class="tabla-titulo">Listado de Categorías</h1>
+
+  <!-- La tabla está vacía por ahora -->
+   <table class="tabla-listado">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+      </tr>
+    </thead>
+     <tbody id="body-categorias">
+        </tbody>
+  </table>
+  <div class="acciones-listado">
+    <a href="./categorias.html" class="btn guardar">Agregar categoría</a>
+  </div>
+
+  <p class="autor">Hernán Manera</p>
+  <button class="btn"><a href="categorias.html">Ir al formulario</a></button>
+ </div>
+  <script>
+     fetch('../lista_categorias.php')
+      .then(r => r.text())
+      .then(htmlFilas => {
+        document.getElementById('body-categorias').innerHTML = htmlFilas;
+      });
+  </script>
+</body>
+</html>

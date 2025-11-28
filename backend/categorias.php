@@ -1,10 +1,11 @@
 <?php
-require_once '../clases/Categoria.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $categoria = new Categoria();
-    $categoria->nombre = $_POST['nombre'];
+require_once __DIR__ . '/../class/autoload.php';
+
+$db = new Database();
+$categoria = new Categorias($db);
+
+if (!empty($_POST)) {
+    $categoria->nombre = $_POST['nombre'] ?? '';
     $categoria->guardar();
-    header("Location: ../vistas/categorias.html");
 }
-?>

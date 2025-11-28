@@ -10,19 +10,13 @@ export function inicialEventos() {
   $("#form-categoria").on("submit", function (e) {
     e.preventDefault();
     if (validateformularioCategoria()) {
-      setTimeout(() => {
+       setTimeout(() => {
         this.submit();
       }, 3000);
     }
   });
   // Validación onFocus para formulario de Categorías
-  $("#id-categoria-form").on("focus", function () {
-    ValidateformularioCategoriaOnfocus();
-  });
-  $("#id-categoria-form").on("blur", function () {
-    ValidateformularioCategoriaOnfocus();
-  });
-  $("#nombre-categoria-form").on("focus", function () {
+   $("#nombre-categoria-form").on("focus", function () {
     ValidateformularioCategoriaOnfocus();
   });
   $("#nombre-categoria-form").on("blur", function () {
@@ -39,12 +33,6 @@ export function inicialEventos() {
     }
   });
   // validación onFocus para formulario de Productos
-  $("#id-producto").on("focus", function () {
-    validateformularioProductoOnFocus();
-  });
-  $("#id-producto").on("blur", function () {
-    validateformularioProductoOnFocus();
-  });
   $("#nombre-producto").on("focus", function () {
     validateformularioProductoOnFocus();
   });

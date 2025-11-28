@@ -2,6 +2,7 @@
 @import url(./form.css);
 @import url(./header.css);
 @import url(./views/home.css);
+@import url(./listas.css);
 body {
   font-family: Arial, sans-serif;
   background: var(--bg);

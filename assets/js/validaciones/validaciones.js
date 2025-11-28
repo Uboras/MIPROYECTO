@@ -1,19 +1,8 @@
 //validacion para envio de formulario de categorias
 export function validateformularioCategoria() {
-  let categoria = $("#id-categoria-form").val().trim();
   let nombre = $("#nombre-categoria-form").val().trim();
   let error = [];
   let erorrMensaje = $("#error-form").val("");
-
-  if (categoria === "")
-    error.push(
-      "<p class='error-text danger'> Ingrese Categoría es obligatorio</p>"
-    );
-  if (isNaN(categoria) || categoria <= 0) {
-    error.push(
-      "<p class='error-text danger'>Ingrese Categoría Válida, mayor a 0.</p>"
-    );
-  }
   if (nombre === "") {
     error.push("<p class='error-text danger'>El Nombre es obligatorio.</p>");
   }
@@ -27,23 +16,13 @@ export function validateformularioCategoria() {
 }
 //validacion para envio de datos en formulario de productos
 export function validateformularioProducto() {
-  let id = $("#id-producto").val().trim();
   let nombre = $("#nombre-producto").val().trim();
   let descripcion = $("#descripcion-producto").val().trim();
   let precio = $("#precio-producto").val().trim();
   let categoria = $("#categoria-producto").val().trim();
   let error = [];
   let erorrMensaje = $("#error-form").val("");
-  if (id === "")
-    error.push(
-      "<p class='error-text danger'> Ingrese ID Producto es obligatorio</p>"
-    );
-  if (isNaN(id) || id <= 0) {
-    error.push(
-      "<p class='error-text danger'>Ingrese ID Producto Válida, mayor a 0.</p>"
-    );
-  }
-  if (nombre === "") {
+   if (nombre === "") {
     error.push(
       "<p class='error-text danger'>El Nombre del Producto es obligatorio.</p>"
     );
@@ -81,22 +60,13 @@ export function validateformularioProducto() {
 }
 //validacion para verificacion de datos en formulario de productos
 export function validateformularioProductoOnFocus() {
-  let id = $("#id-producto").val().trim();
   let nombre = $("#nombre-producto").val().trim();
   let descripcion = $("#descripcion-producto").val().trim();
   let precio = $("#precio-producto").val().trim();
   let categoria = $("#categoria-producto").val().trim();
   let error = [];
   let erorrMensaje = $("#error-form").val("");
-  if (id === "")
-    error.push(
-      "<p class='error-text danger'> Ingrese ID Producto es obligatorio</p>"
-    );
-  if (isNaN(id) || id <= 0) {
-    error.push(
-      "<p class='error-text danger'>Ingrese ID Producto Válida, mayor a 0.</p>"
-    );
-  }
+ 
   if (nombre === "") {
     error.push(
       "<p class='error-text danger'>El Nombre del Producto es obligatorio.</p>"
@@ -133,20 +103,9 @@ export function validateformularioProductoOnFocus() {
 }
 //validacion para verificacion de datos en formulario de categorias
 export function ValidateformularioCategoriaOnfocus() {
-  let categoria = $("#id-categoria-form").val().trim();
   let nombre = $("#nombre-categoria-form").val().trim();
   let error = [];
   let erorrMensaje = $("#error-form").val("");
-
-  if (categoria === "")
-    error.push(
-      "<p class='error-text danger'> Ingrese Categoría es obligatorio</p>"
-    );
-  if (isNaN(categoria) || categoria <= 0) {
-    error.push(
-      "<p class='error-text danger'>Ingrese Categoría Válida, mayor a 0.</p>"
-    );
-  }
   if (nombre === "") {
     error.push("<p class='error-text danger'>El Nombre es obligatorio.</p>");
   }

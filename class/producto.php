@@ -1,36 +1,49 @@
 <?php
-/*@autor Hernan Manera */ 
-require_once 'database.php';
+/* @autor Hernán Manera */
 
-class Producto {
-    private $conn;
+class Productos
+{
     public $id;
     public $nombre;
     public $precio;
     public $categoria_id;
 
-    public function __construct() {
-        $db = new Database();
-        $this->conn = $db->connect();
+    private $db; // instancia de Database
+
+    public function __construct(Database $db)
+    {
+        $this->db = $db;
     }
 
-    public function guardar() {
-        $query = "INSERT INTO productos (nombre, precio, categoria_id) VALUES (?, ?, ?)";
-        $stmt = $this->conn->prepare($query);
-        return $stmt->execute([$this->nombre, $this->precio, $this->categoria_id]);
+    public function guardar()
+    {
+        if ($this->id) {
+            // update
+            $sql = "UPDATE productos 
+                    SET nombre = ?, precio = ?, categoria_id = ?
+                    WHERE id = ?";
+            return $this->db->update($sql, [
+                $this->nombre,
+                $this->precio,
+                $this->categoria_id,
+                $this->id
+            ]);
+        } else {
+            // insert
+            $sql = "INSERT INTO productos (nombre, precio, categoria_id)
+                    VALUES (?, ?, ?)";
+            $this->id = $this->db->insert($sql, [
+                $this->nombre,
+                $this->precio,
+                $this->categoria_id
+            ]);
+            return $this->id;
+        }
     }
 
-    public function listar() {
-        $query = "SELECT p.id, p.nombre, p.precio, c.nombre AS categoria
-                  FROM productos p
-                  JOIN categorias c ON p.categoria_id = c.id";
-        return $this->conn->query($query)->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    public function eliminar($id) {
-        $query = "DELETE FROM productos WHERE id = ?";
-        $stmt = $this->conn->prepare($query);
-        return $stmt->execute([$id]);
+    public function eliminar()
+    {
+        $sql = "DELETE FROM productos WHERE id = ?";
+        return $this->db->delete($sql, [$this->id]);
     }
 }
-?>
