@@ -9,3 +9,6 @@ if (!empty($_POST)) {
     $categoria->nombre = $_POST['nombre'] ?? '';
     $categoria->guardar();
 }
+header('Location: ../backend/views/lista_categorias.html');
+
+exit;

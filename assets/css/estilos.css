@@ -16,3 +16,9 @@ body {
 .success {
   color: var(--success);
 }
+.primary {
+  color: var(--btn-primary-text);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  background-color: var(--btn-primary-bg);
+  border: 2px solid var(--bg);
+}

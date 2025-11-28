@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="../../assets/css/estilos.css">
 </head>
 <body>
+  <header class="header"></header>
  <div class="tabla-contenedor">
   <h1 class="tabla-titulo">Listado de productos</h1>
 
@@ -20,13 +21,17 @@
      <tbody id="body-productos">
         </tbody>
   </table>
-  <div class="acciones-listado">
-    <a href="./productos.html" class="btn guardar">Agregar categoría</a>
   </div>
 
-  <p class="autor">Hernán Manera</p>
+ <div class="accion-forms">
+  <button onclick="Location('productos.html')"; class="btn primary" >Agregar Productos</button>
+ <p class="autor">Hernán Manera</p>  
+</div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="module" src="../../assets/js/main.js"></script>
 
   <script>
+    
      fetch('../lista_productos.php')
       .then(r => r.text())
       .then(htmlFilas => {

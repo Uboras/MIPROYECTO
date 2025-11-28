@@ -57,4 +57,7 @@ export function inicialEventos() {
   $("#categoria-producto").on("blur", function () {
     validateformularioProductoOnFocus();
   });
+
+  
+
 }

@@ -11,3 +11,7 @@ if (!empty($_POST)) {
     $producto->categoria_id = $_POST['categoria_id'] ?? null;
     $producto->guardar();
 }
+header('Location: ../backend/views/lista_productos.html');
+
+
+exit;

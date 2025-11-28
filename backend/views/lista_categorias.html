@@ -21,13 +21,14 @@
      <tbody id="body-categorias">
         </tbody>
   </table>
-  <div class="acciones-listado">
-    <a href="./categorias.html" class="btn guardar">Agregar categoría</a>
-  </div>
-
-  <p class="autor">Hernán Manera</p>
-  <button class="btn"><a href="categorias.html">Ir al formulario</a></button>
  </div>
+  <div class="accion-forms">
+  <button onclick="Location('categorias.html')"; class="btn primary" >Agregar Categoria</button>
+   <p class="autor">Hernán Manera</p>
+</div>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="module" src="../../assets/js/main.js"></script>
+
   <script>
      fetch('../lista_categorias.php')
       .then(r => r.text())

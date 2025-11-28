@@ -17,19 +17,7 @@ class Productos
 
     public function guardar()
     {
-        if ($this->id) {
-            // update
-            $sql = "UPDATE productos 
-                    SET nombre = ?, precio = ?, categoria_id = ?
-                    WHERE id = ?";
-            return $this->db->update($sql, [
-                $this->nombre,
-                $this->precio,
-                $this->categoria_id,
-                $this->id
-            ]);
-        } else {
-            // insert
+         
             $sql = "INSERT INTO productos (nombre, precio, categoria_id)
                     VALUES (?, ?, ?)";
             $this->id = $this->db->insert($sql, [
@@ -37,8 +25,7 @@ class Productos
                 $this->precio,
                 $this->categoria_id
             ]);
-            return $this->id;
-        }
+           return $this->id;
     }
 
     public function eliminar()

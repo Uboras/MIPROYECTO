@@ -4,7 +4,7 @@
 require_once __DIR__ . '/../class/autoload.php';
 
 $db = new Database();
-$sql = "SELECT id, nombre,precio,categoria FROM productos ORDER BY id ASC";
+$sql = "SELECT id, nombre,precio,categoria_id FROM productos ORDER BY id ASC";
 $productos = $db->select($sql);
 
 if (!empty($productos)) {

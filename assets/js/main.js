@@ -6,3 +6,8 @@ Header();
 
 inicialTema();
 inicialEventos();
+
+function Location(ruta) {
+  window.location.href = ruta;
+}
+window.Location = Location;
