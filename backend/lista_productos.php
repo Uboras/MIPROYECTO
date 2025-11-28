@@ -8,12 +8,17 @@ $sql = "SELECT id, nombre,precio,categoria_id FROM productos ORDER BY id ASC";
 $productos = $db->select($sql);
 
 if (!empty($productos)) {
-    foreach ($productos as $prod) {
+             foreach ($productos as $prod) {
+        $id        = $prod['id'] ?? '';
+        $nombre    = $prod['nombre'] ?? '';
+        $precio    = $prod['precio'] ?? '';
+        $categoria = $prod['categoria'] ?? 'Sin categoría'; // 👈 valor por defecto
+
         echo '<tr>';
-        echo '<td>' . htmlspecialchars($cat['id']) . '</td>';
-        echo '<td>' . htmlspecialchars($cat['nombre']) . '</td>';
-        echo '<td>' . htmlspecialchars($cat['precio']) . '</td>';
-        echo '<td>' . htmlspecialchars($cat['categoria']) . '</td>';
+        echo '<td>' . htmlspecialchars((string)$id) . '</td>';
+        echo '<td>' . htmlspecialchars((string)$nombre) . '</td>';
+        echo '<td>' . htmlspecialchars((string)$precio) . '</td>';
+        echo '<td>' . htmlspecialchars((string)$categoria) . '</td>';
         echo '</tr>';
     }
 } else {
