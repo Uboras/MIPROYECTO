@@ -1,4 +1,5 @@
 <?php
+/*@autor Hernan Manera */ 
 require_once 'database.php';
 
 class Producto {

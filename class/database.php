@@ -1,4 +1,5 @@
 <?php
+/*@autor Hernan Manera */ 
 class Database {
     private $host = "localhost";
     private $db_name = "MIPROYECTO";
