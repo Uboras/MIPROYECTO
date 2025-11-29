@@ -3,9 +3,12 @@
 @import url(./header.css);
 @import url(./views/home.css);
 @import url(./listas.css);
+html{
+  height: fit-content;
+}
 body {
   font-family: Arial, sans-serif;
-  background: var(--bg);
+  
 
   margin: 0;
   padding: 0;
@@ -18,7 +21,27 @@ body {
 }
 .primary {
   color: var(--btn-primary-text);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
   background-color: var(--btn-primary-bg);
-  border: 2px solid var(--bg);
+  
+}  
+.bg-primary{
+  background: linear-gradient(to top, var(--secondary) 2%, var(--surface) 7%, transparent 90%);
+}
+.bg-secondary{
+  background-color: var(--secondary);
+}
+
+
+.secondary {
+  color: var(--secondary);
+  
+}
+.border-bottom{
+  border-bottom: 2px solid var(--secondary);
+}
+.border{
+  border: 2px solid var(--secondary);
+}
+.text-shadow{
+  text-shadow: 2px 2px 2px var(--surface);
 }

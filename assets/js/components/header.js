@@ -30,9 +30,10 @@ export function HeaderHome() {
   const selector1 = ".headerHome";
   const head = document.querySelector(selector1);
   head.innerHTML = `
-     <div class="logo-headerHome">
+     <div class="logo-headerHome border-bottom">
       <a href="../../../views/home.html"><img src="${logo}" alt="Logo IronPulse" /></a>
-    </div>
-    
+      <p class="header-parrafo">Tu lugar para comprar tu nueva PC.</p>
+      </div>
+    <button id="cambiartema">☀️/🌙</button>
       </div>`;
-    }
+}

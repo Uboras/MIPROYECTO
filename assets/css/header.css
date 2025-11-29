@@ -41,6 +41,12 @@
   
 
 }
+.header-parrafo{
+  
+    font-size: 1em;
+    margin-top: -20px;
+
+}
 /* NAV MENU */
 .menu {
   display: flex;

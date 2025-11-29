@@ -1,29 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+    
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IronPulse</title>
     <link rel="stylesheet" href="../assets/css/estilos.css">
 </head>
-<body>
-    <header class="header"></header>
+
+<body class="body-home">
     <header class="headerHome"></header>
-    <main class="main">
-           <div class="main-container">
-            <p class="main-titulo">Bienvenido a IronPulse</p>
-            <p class="main-parrafo">Tu lugar para comprar tu nueva PC.</p>
-            <button class="btn-heroe" onclick="Location('../backend/views/lista_productos.html')"; id="startButton">Productos</button>
-            <button class="btn-heroe" onclick="Location('../backend/views/productos.html')"; id="startButton">Vende tus Productos</button>
+    <main>
+        <div class="main-container">
+            <div class="home-seccion bg-secondary">
+                <p class="main-parrafo text-shadow">Tu lugar para</p>
+                <button class="btn primary" onclick="Location('../backend/views/lista_productos.html')"
+                    id="startButton">Compra Productos</button>
+                <button class="btn primary" onclick="Location('../backend/views/productos.html')" id="startButton">Vende
+                    tus Productos</button>
+            </div>
+<div class="home-seccion ">
+        <img src="../assets/img/promos/promos.png" alt="promocion nigth">
+        <img src="../assets/img/promos/promos.png" alt="promocion nigth">
+        <img src="../assets/img/promos/promos.png" alt="promocion nigth">
+        <img src="../assets/img/promos/promos.png" alt="promocion nigth">
+    </div>
+            <div class="home-seccion secondary">
+            </div>
+            <div class="home-seccion">
+                <div class="card-container">
+                    <p class="main-titulo border-bottom bg-primary">Categorias</p>
+                    <div id="body-categorias"></div>
+                </div>
+
+            </div>
+            <div class="home-seccion">
+                <div class="card-container">
+                    <p class="main-titulo border-bottom bg-primary">Productos destacados</p>
+                    <div id="body-productos"></div>
+                </div>
+
+            </div>
         </div>
-    <div class="heroe-image">
-            <img src="../assets/img/heroe.png" alt="">
         </div>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script type="module" src="../assets/js/main.js"></script>
-        <script type="module">
-            import { HeaderHome } from "../assets/js/components/header.js";
-            HeaderHome();
-        </script>
+
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="../assets/js/main.js"></script>
+    <script type="module">
+        import { HeaderHome } from "../assets/js/components/header.js";
+        HeaderHome();
+        fetch('../backend/lista_productos-home.php')
+            .then(r => r.text())
+            .then(html => {
+                console.log('RESPUESTA PHP:', html);
+                $("#body-productos").html(html);   // ✅ ahora sí inyecta
+            })
+            .catch(err => console.error('ERROR FETCH:', err));
+        fetch('../backend/lista_categorias-home.php')
+            .then(r => r.text())
+            .then(html => {
+                console.log('RESPUESTA PHP:', html);
+                $("#body-categorias").html(html);   // ✅ ahora sí inyecta
+            })
+            .catch(err => console.error('ERROR FETCH:', err));
+    </script>
 </body>
+
 </html>

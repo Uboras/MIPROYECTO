@@ -25,7 +25,7 @@ function updateButtonLabel() {
   const btn = document.getElementById(BUTTON_ID);
   if (!btn) return; // si aún no existe, no falla
   const theme = html.getAttribute("data-theme");
-  btn.textContent = theme === "dark" ? "Modo Claro ☀️" : "Modo Oscuro 🌙";
+  btn.textContent = theme === "dark" ? "☀️" : "🌙";
 }
 
 //Inicializar tema cuando el DOM está listo
